@@ -2,24 +2,29 @@ $color-primary: #4ea8de;
 $color-primary-dark: #1e6f9f;
 $color-secondary: #5e60ce;
 $color-tertiary: #262626;
+$color-tertiary-lighter: #808080;
 $background-color-primary: #0d0d0d;
 $background-color-secondary: #1a1a1a;
 $font-color: #fff;
 
-@mixin button-styles($color: $color-primary) {
+@mixin button-styles($color: $color-primary, $font-size: 2rem) {
   width: 10rem;
   border: none;
   border-radius: 0.5rem;
   color: $font-color;
-  font-size: 2rem;
+  font-size: $font-size;
   font-weight: bold;
   background-color: $color;
 }
 
-.container {
+@mixin vertical-center {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container {
+  @include vertical-center();
   height: 100vh;
   background-color: $background-color-secondary;
 }
@@ -84,6 +89,77 @@ main {
 
       &:hover {
         transition: 0.5s ease-out;
+      }
+    }
+  }
+
+  .task__list {
+    color: $font-color;
+    margin-top: 4rem;
+    @include vertical-center();
+
+    .task__list-filter {
+      width: 50%;
+      display: flex;
+      margin-bottom: 1rem;
+
+      .btn-filter {
+        text-align: center;
+        width: 6rem;
+        background-color: $background-color-secondary;
+        border: 0.1rem solid $color-secondary;
+        padding: 0.5rem 1rem;
+        color: $font-color;
+        border-radius: 2rem;
+        color: $color-secondary;
+        transition: 0.6s ease;
+
+        &:hover {
+          color: $font-color;
+          background-color: $color-secondary;
+        }
+      }
+    }
+
+    .task__list-stats {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      .created {
+        color: $color-primary;
+      }
+
+      .completed {
+        color: $color-secondary;
+      }
+
+      .count-display {
+        display: inline-block;
+        background-color: $color-tertiary;
+        margin-left: 0.1rem;
+        padding: 0 1rem;
+        border-radius: 1rem;
+      }
+    }
+
+    .task__list--empty {
+      width: 50%;
+      margin-top: 2rem;
+      padding: 6rem;
+      border-top: 0.1rem solid $color-tertiary;
+      border-radius: 1rem;
+      @include vertical-center();
+
+      & > * {
+        margin-bottom: 2rem;
+        color: $color-tertiary-lighter;
+      }
+
+      .bold {
+        font-weight: bold;
+        margin: 0;
       }
     }
   }
