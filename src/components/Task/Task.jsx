@@ -17,10 +17,14 @@ const Task = () => {
     );
   };
 
+  const onDelete = (taskIdToDelete) => {
+    setTasks(tasks.filter((task) => task.id !== taskIdToDelete));
+  };
+
   return (
     <>
       <Adder onAdd={onAdd} />
-      <List tasks={tasks} onComplete={onComplete} />
+      <List tasks={tasks} onComplete={onComplete} onDelete={onDelete} />
     </>
   );
 };

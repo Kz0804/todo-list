@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Item from './Item';
 
-const List = ({ tasks, onComplete }) => {
+const List = ({ tasks, onComplete, onDelete }) => {
   const [showCompleted, setShowCompleted] = useState(true);
 
   return (
@@ -16,7 +16,12 @@ const List = ({ tasks, onComplete }) => {
         {tasks.map(
           (task) =>
             (!task.completed || showCompleted) && (
-              <Item key={task.id} task={task} onComplete={onComplete} />
+              <Item
+                key={task.id}
+                task={task}
+                onComplete={onComplete}
+                onDelete={onDelete}
+              />
             )
         )}
       </ul>

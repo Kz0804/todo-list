@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Item = ({ task, onComplete }) => {
+const Item = ({ task, onComplete, onDelete }) => {
   const { id, content, completed } = task;
 
   return (
@@ -13,7 +13,9 @@ const Item = ({ task, onComplete }) => {
           Complete
         </button>
       )}
-      <button className="btn-delete">Delete</button>
+      <button className="btn-delete" onClick={() => onDelete(id)}>
+        Delete
+      </button>
     </li>
   );
 };
