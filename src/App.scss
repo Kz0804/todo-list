@@ -1,7 +1,20 @@
 $color-primary: #4ea8de;
+$color-primary-dark: #1e6f9f;
 $color-secondary: #5e60ce;
+$color-tertiary: #262626;
 $background-color-primary: #0d0d0d;
 $background-color-secondary: #1a1a1a;
+$font-color: #fff;
+
+@mixin button-styles($color: $color-primary) {
+  width: 10rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: $font-color;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: $color;
+}
 
 .container {
   display: flex;
@@ -16,7 +29,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 25%;
+  height: 20%;
   background-color: $background-color-primary;
 
   h1 {
@@ -35,16 +48,44 @@ header {
   }
 }
 
-.task__adder {
-  width: 30rem;
-  display: flex;
-  justify-content: center;
+main {
+  width: 100%;
+  .task__adder {
+    margin: 0 auto;
+    width: 50%;
+    height: 4rem;
+    margin-top: -2rem;
+    display: flex;
+    justify-content: center;
 
-  input {
-    width: 100%;
-    padding: 0.3rem;
-    border: 1px solid $color-primary;
-    border-radius: 3px;
+    input {
+      width: 100%;
+      padding: 0.3rem 0 0.3rem 2rem;
+      border: 1px solid $background-color-primary;
+      border-radius: 0.5rem;
+      margin-right: 0.5rem;
+      color: $font-color;
+      background-color: $color-tertiary;
+    }
+
+    .btn-add {
+      @include button-styles($color-primary);
+
+      &:hover {
+        cursor: pointer;
+        font-size: 3rem;
+        background-color: #1e6f9f;
+        transition: 0.8s ease;
+      }
+    }
+
+    .btn-succeed {
+      @include button-styles($color-primary-dark);
+
+      &:hover {
+        transition: 0.5s ease-out;
+      }
+    }
   }
 }
 

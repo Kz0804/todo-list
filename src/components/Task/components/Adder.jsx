@@ -3,11 +3,18 @@ import React, { useState } from 'react';
 const Adder = ({ onAdd }) => {
   const [id, setId] = useState(1);
   const [content, setContent] = useState('');
+  const [success, setSuccess] = useState(false);
 
   const handleAdd = () => {
-    content.trim() && onAdd({ id: id, content: content, completed: false });
-    setId(id + 1);
-    setContent('');
+    if (content.trim()) {
+      onAdd({ id: id, content: content, completed: false });
+      setId(id + 1);
+      setContent('');
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 600);
+    }
   };
 
   return (
@@ -19,9 +26,13 @@ const Adder = ({ onAdd }) => {
         value={content}
         onChange={(event) => setContent(event.target.value)}
       />
-      <button className="btn-add" onClick={handleAdd}>
-        Add
-      </button>
+      {!success ? (
+        <button className="btn-add" onClick={handleAdd}>
+          <span>+</span>
+        </button>
+      ) : (
+        <button className="btn-succeed">✓</button>
+      )}
     </div>
   );
 };
