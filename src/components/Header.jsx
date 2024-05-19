@@ -1,7 +1,17 @@
 import React from 'react';
 
 const Header = () => {
-  return <header>Todo List</header>;
+  return (
+    <header>
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAkCAYAAACNBsqdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMqSURBVHgB3VZNVttADJYG3qO7+gZ1CvuG1wOQHKCJWQEr0hMAJwg5QekJMCvCKgEOQDgB6b4kPkKW0Pc8qjQeJ5PEf7BE79meH+kbjeaTxgAVpd1/vmz3Jw9V9VUVpdbNtEuAHQJotG6ef1WxwTKFH9d/O4jq0h0joLP7w+2LdwMH11NfI8n2fYb7bU1O+DVThLvDo1qUZ1sYCkLdFVBePVJb6vzucPuU22Me80jpwpCoIm8lrsZHwt5wvzaz7TOzKGHAOo03A1tvJVYj3nKYjnN7hICjRIe6bwJe9XZ1HgnMmLAkGEy9ysAxxA3rbSQers67XusXfVoZmOl1kuftXAfg1iofVwKWMPCnbrsjZ7yxdFhbENqWb22WZHN1IFZxHUmlYYhSLmsgY9zqTyLmcJNZEklbgG3owkKPefuiJAfzx3wtlx0VnxASNhA8GhvE+irOOjDCl8SIxlbFhzVJvFeIVgf9UmAmfmKk1Djp68c1XMBI3jHFSdKAdaYImCXhpQZjpD6pC97y1RySDxS3wGTfBmxEZvHUxpGlwxOy0yt55IzZVO7w3Cm8gFdUeDKBzem/0gAyVncWmOXg+HIJ8MH/TBdWc9CkPNZRSiLiflbGrS0mOkTz9BaMNMUNsFseUersQW0IFURA7o62z5nXNbEVDP3PFi/r7dSswgpgeEpdTfrq/mgnLAJu9Z8vGPAzJ1TPgCa7FpymmpdHpKG0ZVK2pXBjD0oEQX2TKiiOaQV79hIAjTrY5AmTNVK4XSO+1xpQKrTIOKLzBZuwjZzvtPDAxLjHHlymW8qD5JricQgGVq/H4TsmJ/XnwLINBhU2RO3+9KGax4kzt4dfa+ZySMLoy7jwOJKrOgW1yre0XHhyhYhMVtpK2GSgJ+7OsHU9CfnGHd4f7FSiWJkEN9NAE3Ug787qdJ4a/AROP5CxvP4SOIcFc0B9LuyG2/LXw8czQ7AHCrgbmwxd9MNwd7yKsQnZ4qcNNLVDe85Pk4egfbefBVDpp/A98nGAZ45CtG6koizdZZ0MkVPm096XJwy/hxnzoZ1vZjFCpPTHW4TpV2faDRIDAxaV2fwH7H2FF3lith0AAAAASUVORK5CYII="
+        alt="Rocket"
+      />
+      <h1>
+        to<span className="cl-secondary">do</span>
+      </h1>
+    </header>
+  );
 };
 
 export default Header;
