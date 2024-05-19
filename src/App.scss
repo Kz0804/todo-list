@@ -35,6 +35,7 @@ header {
   align-items: center;
   width: 100%;
   height: 20%;
+
   background-color: $background-color-primary;
 
   h1 {
@@ -163,8 +164,90 @@ main {
       }
     }
   }
-}
 
-.task__list-item--completed {
-  text-decoration: line-through;
+  .task__list-details {
+    width: 50%;
+    margin-top: 2rem;
+    @include vertical-center();
+
+    li {
+      width: 100%;
+      height: 8rem;
+      margin: 1rem;
+      border: 0.1rem solid #333333;
+      border-radius: 0.5rem;
+      background-color: $color-tertiary;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .task__content {
+      margin: 1rem 2rem;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      overflow: scroll;
+    }
+
+    .task__content--completed {
+      @extend .task__content;
+      text-decoration: line-through;
+    }
+
+    .btn-complete {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      text-align: center;
+      border: 0.2rem solid $color-primary;
+      background-color: transparent;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      outline: none;
+      padding: 0.5rem;
+      margin: auto 0 auto 2rem;
+
+      div {
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      &.completed {
+        border: none;
+        color: $font-color;
+        background-color: $color-secondary;
+      }
+    }
+
+    .btn-delete {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      transition: all 0.5s;
+      margin: auto 1rem auto auto;
+
+      svg {
+        width: 40%;
+      }
+
+      &:hover {
+        background-color: rgb(237, 56, 56);
+        .bin path {
+          fill: #fff;
+        }
+      }
+    }
+  }
 }

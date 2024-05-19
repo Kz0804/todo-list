@@ -1,20 +1,24 @@
 import React from 'react';
+import { ReactComponent as TrashIcon } from '../../../assets/trash.svg';
 
 const Item = ({ task, onComplete, onDelete }) => {
   const { id, content, completed } = task;
 
   return (
-    <li
-      className={completed ? 'task__list-item--completed' : 'task__list-item'}
-    >
-      {content}
-      {!completed && (
-        <button className="btn-complete" onClick={() => onComplete(id)}>
-          Complete
-        </button>
-      )}
+    <li>
+      <button
+        className={`btn-complete ${completed ? 'completed' : ''}`}
+        onClick={() => onComplete(id)}
+      >
+        <div>{completed ? '✓' : ''}</div>
+      </button>
+      {
+        <span className={`task__content${completed ? '--completed' : ''}`}>
+          {content}
+        </span>
+      }
       <button className="btn-delete" onClick={() => onDelete(id)}>
-        Delete
+        <TrashIcon />
       </button>
     </li>
   );

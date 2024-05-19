@@ -40,7 +40,7 @@ const List = ({ tasks, onComplete, onDelete }) => {
         </div>
       )}
 
-      <ul>
+      <ul className="task__list-details">
         {tasks.map(
           (task) =>
             (!task.completed || showCompleted) && (
