@@ -11,7 +11,7 @@ const Adder = ({ onAdd }) => {
   };
 
   return (
-    <div className="task--adder">
+    <div className="task__adder">
       <input
         type="text"
         placeholder="Add a new task here ..."

@@ -5,7 +5,7 @@ const List = ({ tasks, onComplete, onDelete }) => {
   const [showCompleted, setShowCompleted] = useState(true);
 
   return (
-    <div className="task--list">
+    <div className="task__list">
       <button
         className="btn-filter"
         onClick={() => setShowCompleted(!showCompleted)}
