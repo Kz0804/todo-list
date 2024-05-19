@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 
-const Adder = () => {
+const Adder = ({ onAdd }) => {
+  const [id, setId] = useState(1);
   const [content, setContent] = useState('');
+
+  const handleAdd = () => {
+    content.trim() && onAdd({ id: id, content: content, completed: false });
+    setId(id + 1);
+    setContent('');
+  };
 
   return (
     <div className="task--adder">
@@ -12,7 +19,9 @@ const Adder = () => {
         value={content}
         onChange={(event) => setContent(event.target.value)}
       />
-      <button className="btn-add">Add</button>
+      <button className="btn-add" onClick={handleAdd}>
+        Add
+      </button>
     </div>
   );
 };
