@@ -1,11 +1,12 @@
 import React from 'react';
+import Item from './Item';
 
-const List = ({ tasks }) => {
+const List = ({ tasks, onComplete }) => {
   return (
     <div className="task--list">
       <ul>
         {tasks.map((task) => (
-          <li key={task.id}>{task.content}</li>
+          <Item key={task.id} task={task} onComplete={onComplete} />
         ))}
       </ul>
     </div>

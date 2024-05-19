@@ -9,11 +9,19 @@ const Task = () => {
     setTasks([...tasks, newTask]);
   };
 
+  const onComplete = (completedTaskId) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === completedTaskId ? { ...task, completed: true } : task
+      )
+    );
+  };
+
   return (
-    <main>
+    <>
       <Adder onAdd={onAdd} />
-      <List tasks={tasks} />
-    </main>
+      <List tasks={tasks} onComplete={onComplete} />
+    </>
   );
 };
 
