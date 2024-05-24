@@ -2,8 +2,8 @@
 
 A simple Todo-list app built with Create React App. This app allows users to manage their tasks by adding, editing, and deleting items from their todo list.
 
-<img src='./public/Screenshot-empty-list.png' width=300>
-<img src='./public/Screenshot-list-with-items.png' width=320>
+<img src='./public/Screenshot-empty-list.png' width=500>
+<img src='./public/Screenshot-list-with-items.png' width=500>
 
 ## Features
 
